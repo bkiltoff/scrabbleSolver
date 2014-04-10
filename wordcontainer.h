@@ -10,10 +10,10 @@ public:
 	WordContainer();
 	~WordContainer();
 	bool erase();
-	bool isEmpty() const;
-	void push(const string& word);
 	void pop();
 	void pop(string& word);
+	bool isEmpty() const;
+	void push(const string& word);
 	void getTop(string& word) const;
 	int getSize() const;
 

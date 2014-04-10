@@ -1,6 +1,7 @@
 #ifndef _WORDSINDEX
 #define _WORDSINDEX
 
+#include <iostream>
 #include <string>
 #include <sstream>
 using namespace std;

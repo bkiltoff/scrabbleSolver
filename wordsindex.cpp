@@ -1,5 +1,5 @@
 #include "wordsindex.h"
-#include <iostream>
+
 //constructor
 WordsIndex::WordsIndex()
 {

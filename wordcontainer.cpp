@@ -1,5 +1,4 @@
 #include "wordcontainer.h"
-using namespace std;
 
 WordContainer::WordContainer()
 {

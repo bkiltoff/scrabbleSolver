@@ -1,5 +1,6 @@
 #ifndef _ANAGRABBER
 #define _ANAGRABBER
+
 #include <iostream>
 #include <fstream>
 #include <stack>
@@ -7,6 +8,7 @@
 #include "wordsindex.h"
 using namespace std;
 
+//class WordContainer;
 const string DEFAULTFILENAME = "words.txt";
 
 class Anagrabber

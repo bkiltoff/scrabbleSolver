@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <iostream>
 #include <cstdio>
-#include "wordcontainer.h"
 #include "anagrabber.h"
-#include "wordsindex.h"
-
+#include "wordcontainer.h"
 using namespace std;
 
-string output = "";
+//forward declarations
 void testFunction();
+//class WordContainer;
+
+//global variables
+string output = "";
 
 int main()
 {
-	/*TESTING FRAMES*/
 
-	/*	 FUNCTIONAL PROGRAM BLOCK
-	WordContainer* w;
+	WordContainer* w = NULL;
 	Anagrabber testAnagrabber("enable.txt");
 	cout << "Type in letters to solve: ";
 	cin >> output;
@@ -32,7 +32,6 @@ int main()
 		w->pop();
 	}
 
-	*/ //END  FUNCTIONAL PROGRAM BLOCK 
 	return 0;
 }
 
