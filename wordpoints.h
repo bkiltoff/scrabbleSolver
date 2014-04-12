@@ -1,17 +1,17 @@
 #ifndef __WORDSPOINTS
 #define __WORDSPOINTS
 
+#include "charset.h"
 #include <string>
 using namespace std;
 
-#include "charset.h"
 
 class WordPoints
 {
 private:
 	//point system		
-	const int values [charSetSize]= 
-				{    1, 1, 1, 1, 1,
+	const int values [CharSet::charSetSize]= 
+				{   1, 1, 1, 1, 1,
 				    1, 1, 1, 1, 1,
 				    1, 1, 1, 1, 1,
 				    1, 1, 1, 1, 1,

@@ -1,8 +1,15 @@
 #ifndef __CHARSET
 #define __CHARSET
 
-extern const char letters[];
-extern const char Uletters[];
-extern const int charSetSize;						
+	namespace CharSet
+	{
+		const int charSetSize;
+
+		const char letters[];
+		const char Uletters[];
+
+		int getLtrAsIndex(char c) const;
+	};						
+
 
 #endif

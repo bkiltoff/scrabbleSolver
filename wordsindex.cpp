@@ -111,21 +111,6 @@ bool WordsIndex::contains(const WordsIndex& other) const
 	return true;
 }
 
-//private
-//	int getLtrsAsIndex(...)
-//	pre:	char c is in the set "letters" or "Uletters"
-//	post:	returns index of char in the set "letters"
-//			or else returns -1 for invalid char c
-int WordsIndex::getLtrAsIndex(char c)	
-{
-	for (int i = 0; i < charSetSize; i++)
-	{
-		if (c == letters[i] || c == Uletters[i])
-			return i;
-	}
-//	else
-	return -1;
-}
 
 //private
 //	parseWordToIntegerArray(...)
@@ -154,7 +139,7 @@ void WordsIndex::parseWordToIntegerArray(std::string word)
 		for (unsigned int i = 1; i <= word.length(); i++)
 		{
 			char w = *c;
-			int index = getLtrAsIndex(w);
+			int index = CharSet::getLtrAsIndex(w);
 			ltrs[index]++;	//increment value in ltrs array
 			c++;	//iterate pointer to next letter from word
 		}

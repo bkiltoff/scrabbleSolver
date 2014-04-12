@@ -20,7 +20,8 @@
 	//create new array
 		tiles = new int[arraySize];
 
-	//use getCharValue to populate each index with string value
+		//use WordPoints::getCharValue to populate each 
+		//index with string value
 		for(int i = 0; i < arraySize; i++)
 		{
 			tiles[i] = getCharValue(words[i]);
@@ -80,24 +81,22 @@
 	//return point value of a letter
 	int getCharValue(char c) const
 	{ 
-/*
-AT THIS POINT I'M THINKING I SHOULD REDO "wordsindex.[h][cpp]" ALONG WITH
-"charset.[h][cpp]" SOURCECODE FILES TO MAKE A CharSet CLASS OBJECT WITH A
-MEMBER FUNCTION TO RETURN A CHARACTERS INDEX IN THE LETTER ARRAY... E.G., 'a' or 'A'
-RETURNS 1, 'c' or 'C' RETURNS 3, ETC. I'VE ALREADY WRITTEN THIS FUNCTION 
-BUT IT SEEMS LIKE IT WOULD BE MORE SENSIBLE TO ENCAPSULATE THIS IN AN OBJECT
-RATHER THAN REWRITE THE CODE TO DO THE SAME THING IN the WordPoints CLASS...
-*/
-		;
+		int index = CharSet::getLtrAsIndex(c);
+		return values[index];
 	}
 //END getCharValue
 	
 
 //getPoints
-	//get a words point value
-	int getPoints(string word) const
+	//get a word's point value
+	int getPoints() const
 	{ 
-		; 
+		int accumulator = 0;
+		for(int i = 0; i < arraySize; i++)
+		{
+			accumulator += getCharValue(word[i]);
+		} 
+		return accumulator;
 	}
 //END getPoints
 
@@ -106,7 +105,10 @@ RATHER THAN REWRITE THE CODE TO DO THE SAME THING IN the WordPoints CLASS...
 	//apply bonus
 	int letterMultiplier(int multiple, int index)
 	{ 
-		; 
+		int accumulator = getPoints();
+		--multiple;
+		accumulator += (getCharValue(word[index]) * multiple);
+		return accumulator;
 	}
 //END letterMultiplier
 
@@ -115,7 +117,7 @@ RATHER THAN REWRITE THE CODE TO DO THE SAME THING IN the WordPoints CLASS...
 	//apply bonus
 	int wordMultiplier(int multiple)
 	{ 
-		; 
+		return multiple*getPoints(); 
 	}
 //END wordMultiplier
 
