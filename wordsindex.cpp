@@ -10,6 +10,7 @@ WordsIndex::WordsIndex()
 	}
 }
 
+//constructor from word
 WordsIndex::WordsIndex(string word)
 {
 	ltrs = new int[charSetSize];

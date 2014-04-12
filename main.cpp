@@ -10,25 +10,26 @@ void testFunction();
 //class WordContainer;
 
 //global variables
-string output = "";
+string aString = "";
 
 int main()
 {
-
-	WordContainer* w = NULL;
-	Anagrabber testAnagrabber("enable.txt");
+	WordContainer* w = NULL; //will receive words
+	Anagrabber testAnagrabber("enable.txt"); //will deliver w
 	cout << "Type in letters to solve: ";
-	cin >> output;
-	cout << "Solving for "<< output.length() << " letters: ";
+	cin >> aString;
+	cout << "Solving for "<< aString.length() << " letters: ";
 	testFunction();
-	w = testAnagrabber.getWords(output);
+	//Anagrabber scans [filename] for anagrams of aString and
+	//its sub-strings and returns w, containing all matches
+	w = testAnagrabber.getWords(aString);
 	cout << "Wordcontainer size: " << w->getSize() << endl;
-	cin.get();
+	cin.get(); //pause program
 
 	while (!(w->isEmpty()))
 	{
-		w->getTop(output);
-		testFunction();
+		w->getTop(aString); //put top of w into aString
+		testFunction();	//show result, press enter to continue
 		w->pop();
 	}
 
@@ -37,6 +38,6 @@ int main()
 
 void testFunction()
 {
-	cout << output << endl;
+	cout << aString << endl;
 	cin.get();
 }
