@@ -10,12 +10,14 @@ class WordPoints
 {
 private:
 	//point system		
-	const int values [CharSet::charSetSize]= 
-				{   1, 1, 1, 1, 1,
+	const int values [] = 
+				{
+				    7, 1, 1, 1, 1,
 				    1, 1, 1, 1, 1,
 				    1, 1, 1, 1, 1,
 				    1, 1, 1, 1, 1,
-				    1, 1, 1, 1, 1, 1 	 };
+				    1, 1, 1, 1, 1, 1 	 
+				};
 
 	//empty array to contain letter values
 	int* tiles;

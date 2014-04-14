@@ -3,8 +3,8 @@
 //default constructor
 	WordPoints::WordPoints()
 	{ 
-		word = "";
-		arraySize = 1;
+		this->word = "";
+		this->arraySize = 1;
 		tiles = new int[arraySize];
 		tiles[0]=0;
 	}
@@ -15,16 +15,13 @@
 	WordPoints::WordPoints(string inputWord)
 	{ 
 		this->word = inputWord;
-	//use string::length to get array size
 		this->arraySize = this->word.length();
-	//create new array
 		tiles = new int[arraySize];
-
-		//use WordPoints::getCharValue to populate each 
-		//index with string value
+		//use WordPoints::getCharValue to populate 
+		//each index with string value
 		for(int i = 0; i < arraySize; i++)
 		{
-			tiles[i] = getCharValue(words[i]);
+			tiles[i] = WordPoints::getCharValue(words[i]);
 		} 
 	}
 //END constructor from string	

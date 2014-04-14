@@ -1,5 +1,5 @@
 #include "charset.h"
-
+/****************
 //size of alphabet
 	CharSet::charSetSize = 26;
 
@@ -18,7 +18,7 @@
 				'V', 'W', 'X', 'Y', 'Z'
 		  	      };
 	
-
+*****************/
 //private
 //	int getLtrsAsIndex(...)
 //	pre:	char c is in the set "letters" or "Uletters"
