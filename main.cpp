@@ -2,8 +2,8 @@
 #include <iostream>
 #include <cstdio>
 #include "wordpoints.h"
-#include "anagrabber.h"
-#include "wordcontainer.h"
+//#include "anagrabber.h"
+//#include "wordcontainer.h"
 using namespace std;
 
 //forward declarations
@@ -14,7 +14,7 @@ string aString = "";
 
 int main()
 {
-/* old test
+/********************* old test
 	WordContainer* w = NULL; //will receive words
 	Anagrabber testAnagrabber("enable.txt"); //will deliver w
 	cout << "Type in letters to solve: ";
@@ -33,12 +33,13 @@ int main()
 		testFunction();	//show result, press enter to continue
 		w->pop();
 	}
-*/ //end old test
+****************************/ //end old test
 
 	cout << "Type in word to get points: ";
 	cin >> aString;
-	WordPoints testPoints = new WordPoints(aString);
-	cout <<	testPoints.getPoints() << endl;
+	WordPoints testPoints = WordPoints(aString);
+	int answer = testPoints.getPoints();
+	cout << answer << endl;
 	cin.get();
 	return 0;
 }

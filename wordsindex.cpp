@@ -3,8 +3,8 @@
 //constructor
 WordsIndex::WordsIndex()
 {
-	ltrs = new int[charSetSize];
-	for (int i = 0; i < charSetSize; i++)
+	ltrs = new int[CharSet::charSetSize];
+	for (int i = 0; i < CharSet::charSetSize; i++)
 	{
 		ltrs[i] = 0;
 	}
@@ -13,8 +13,8 @@ WordsIndex::WordsIndex()
 //constructor from word
 WordsIndex::WordsIndex(string word)
 {
-	ltrs = new int[charSetSize];
-	for (int i = 0; i < charSetSize; i++)
+	ltrs = new int[CharSet::charSetSize];
+	for (int i = 0; i < CharSet::charSetSize; i++)
 	{
 		ltrs[i] = 0;
 	}
@@ -30,8 +30,8 @@ WordsIndex::~WordsIndex()
 //copy constructor
 WordsIndex::WordsIndex(const WordsIndex& other)
 {
-	this->ltrs = new int[charSetSize];
-	for (int i = 0; i < charSetSize; i++)
+	this->ltrs = new int[CharSet::charSetSize];
+	for (int i = 0; i < CharSet::charSetSize; i++)
 	{
 		this->ltrs[i] = other.ltrs[i];
 	}
@@ -43,10 +43,10 @@ WordsIndex& WordsIndex::operator = (const WordsIndex other)
 	if (this != &other) //protect against invalid self-assignment
 	{
 		//allocate new memory
-		int* new_ltrs = new int[charSetSize];
+		int* new_ltrs = new int[CharSet::charSetSize];
 		
 		//copy other.ltrs to new_ltrs
-		for (int i = 0; i < charSetSize; i++)
+		for (int i = 0; i < CharSet::charSetSize; i++)
 		{
 			new_ltrs[i] = other.ltrs[i];
 		}
@@ -87,7 +87,7 @@ bool WordsIndex::contains(const string word) const
 //	post:
 bool WordsIndex::equals(const WordsIndex& other) const
 {
-	for (int i = 0; i < charSetSize; i++)
+	for (int i = 0; i < CharSet::charSetSize; i++)
 	{
 		if (other.ltrs[i] != ltrs[i])
 			return false;
@@ -101,7 +101,7 @@ bool WordsIndex::equals(const WordsIndex& other) const
 //	post:
 bool WordsIndex::contains(const WordsIndex& other) const
 {
-	for (int i = 0; i < charSetSize; i++)
+	for (int i = 0; i < CharSet::charSetSize; i++)
 	{
 		if (other.ltrs[i]>0 && other.ltrs[i] > ltrs[i])
 		{

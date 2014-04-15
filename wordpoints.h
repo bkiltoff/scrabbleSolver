@@ -1,7 +1,9 @@
 #ifndef __WORDSPOINTS
 #define __WORDSPOINTS
 
+
 #include "charset.h"
+using namespace CharSet;
 #include <string>
 using namespace std;
 
@@ -9,15 +11,6 @@ using namespace std;
 class WordPoints
 {
 private:
-	//point system		
-	const int values [] = 
-				{
-				    7, 1, 1, 1, 1,
-				    1, 1, 1, 1, 1,
-				    1, 1, 1, 1, 1,
-				    1, 1, 1, 1, 1,
-				    1, 1, 1, 1, 1, 1 	 
-				};
 
 	//empty array to contain letter values
 	int* tiles;
@@ -44,7 +37,7 @@ public:
 	int getCharValue(char arg) const;
 	
 	//get a words point value
-	int getPoints(string word) const;
+	int getPoints() const;
 
 	//apply bonus
 	int letterMultiplier(int multiple, int index);

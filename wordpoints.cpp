@@ -1,4 +1,7 @@
+#include <iostream>
+#include "wordpoints.h"
 //public
+
 
 //default constructor
 	WordPoints::WordPoints()
@@ -21,14 +24,14 @@
 		//each index with string value
 		for(int i = 0; i < arraySize; i++)
 		{
-			tiles[i] = WordPoints::getCharValue(words[i]);
+			tiles[i] = WordPoints::getCharValue(word[i]);
 		} 
 	}
 //END constructor from string	
 
 
 //default destructor
-	~WordPoints::WordPoints()
+	WordPoints::~WordPoints()
 	{ 
 		delete tiles; 
 	}
@@ -36,7 +39,7 @@
 
 
 //copy constructor
-	WordPoints::WordPoints(const WordPoints::WordPoints& other)
+	WordPoints::WordPoints(const WordPoints& other)
 	{ 
 		this->arraySize = other.arraySize;
 		this->tiles = new int[arraySize]; 
@@ -49,7 +52,7 @@
 
 
 //assignment operator
-	WordPoints::WordPoints& operator= (const WordPoints::WordPoints other)	
+	WordPoints& WordPoints::operator= (const WordPoints other)	
 	{ 
 		if (this != &other) //protect against invalid self-assignment
 		{
@@ -76,22 +79,22 @@
 
 //getCharValue
 	//return point value of a letter
-	int getCharValue(char c) const
+	int WordPoints::getCharValue(char c) const
 	{ 
 		int index = CharSet::getLtrAsIndex(c);
-		return values[index];
+		return CharSet::values[index];
 	}
 //END getCharValue
 	
 
 //getPoints
 	//get a word's point value
-	int getPoints() const
+	int WordPoints::getPoints() const
 	{ 
 		int accumulator = 0;
 		for(int i = 0; i < arraySize; i++)
 		{
-			accumulator += getCharValue(word[i]);
+			accumulator += tiles[i];
 		} 
 		return accumulator;
 	}
@@ -100,7 +103,7 @@
 
 //letterMultiplier
 	//apply bonus
-	int letterMultiplier(int multiple, int index)
+	int WordPoints::letterMultiplier(int multiple, int index)
 	{ 
 		int accumulator = getPoints();
 		--multiple;
@@ -112,7 +115,7 @@
 
 //wordMultiplier
 	//apply bonus
-	int wordMultiplier(int multiple)
+	int WordPoints::wordMultiplier(int multiple)
 	{ 
 		return multiple*getPoints(); 
 	}
